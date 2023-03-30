@@ -1,0 +1,16 @@
+.messages-list {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  height: 100%;
+  overflow: auto;
+  &__item {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 1.5rem;
+
+    &._sender {
+      justify-content: end;
+    }
+  }
+
+}

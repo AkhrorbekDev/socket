@@ -1,0 +1,51 @@
+.contact-item {
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  display: flex;
+  box-sizing: border-box;
+
+  &__avatar {
+    position: relative;
+    height: 70px;
+    width: 70px;
+
+    img {
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+      border: 1.5px solid #f5f6fa;
+    }
+  }
+
+  &__info {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+
+    span {
+      font-size: 20px;
+      color: white;
+    }
+
+    p {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &.active {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .online_icon {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: $green-1;
+    border-radius: 50%;
+    bottom: 0.2em;
+    right: 0.4em;
+    border: 1.5px solid white;
+  }
+}

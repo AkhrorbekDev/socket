@@ -1,56 +1,65 @@
 <script setup>
 import { state } from '@/socket';
-import { computed } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import ConnectionManager from '@/components/ConnectionManager.vue';
 import MyForm from '@/components/MyOfrm.vue';
+import MessageList from '@/components/MessageList.vue';
+import FormHeader from '@/components/FormHeader.vue';
+import MessageForm from '@/components/MessageForm.vue';
+import Messenger from '@/components/Messenger.vue';
+import Contacts from '@/components/Contacts.vue';
 
 const connected = computed(() => {
   return state.connected;
 });
 
+
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-
+  <div class="container-fluid app">
+    <div style="margin-right: 16px">
+      <Contacts style="width: 500px" />
     </div>
-  </header>
-
-  <main>
-    <p>State: {{ connected }}</p>
-    <ConnectionManager></ConnectionManager>
-    <MyForm />
-  </main>
+    <Messenger />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style scoped lang="scss">
+.app {
+  height: 80vh;
+  display: flex;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.container-fluid {
+  padding: 16px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.row {
+  display: flex;
+  justify-content: center;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+.card {
+  position: relative;
+
+  word-wrap: break-word;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  height: 100vh;
+  width: 100%;
+
+
+  &-footer {
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px !important;
+    border-top: 0 !important;
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, .03);
   }
 }
 </style>

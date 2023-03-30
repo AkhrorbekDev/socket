@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import Utils from './plugins/utils';
 
-import './assets/main.css'
+import './assets/main.css';
 
-createApp(App).mount('#app')
+createApp(App).use(Utils).mount('#app');
