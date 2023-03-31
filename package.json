@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "laravel-echo": "^1.15.0",
+    "pusher-js": "^8.0.2",
     "sanitize-html": "^2.10.0",
     "sass-loader": "^13.2.2",
+    "socket.io": "^4.6.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {

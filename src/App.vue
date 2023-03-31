@@ -1,6 +1,6 @@
 <script setup>
-import { state } from '@/socket';
-import { computed, onMounted, ref } from 'vue';
+import {state} from '@/socket';
+import {computed, onMounted, ref} from 'vue';
 import ConnectionManager from '@/components/ConnectionManager.vue';
 import MyForm from '@/components/MyOfrm.vue';
 import MessageList from '@/components/MessageList.vue';
@@ -9,19 +9,16 @@ import MessageForm from '@/components/MessageForm.vue';
 import Messenger from '@/components/Messenger.vue';
 import Contacts from '@/components/Contacts.vue';
 
-const connected = computed(() => {
-  return state.connected;
-});
-
 
 </script>
 <template>
-  <div class="container-fluid app">
-    <div style="margin-right: 16px">
-      <Contacts style="width: 500px" />
+    <div class="container-fluid app">
+        <button @click="test">test</button>
+        <div style="margin-right: 16px">
+            <Contacts style="width: 500px"/>
+        </div>
+        <Messenger/>
     </div>
-    <Messenger />
-  </div>
 </template>
 
 <style scoped lang="scss">

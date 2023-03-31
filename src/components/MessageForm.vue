@@ -41,7 +41,6 @@ function emitMessage() {
 }
 
 function onInput(e) {
-  console.log(e);
   if (e.shiftKey && e.code === 'Enter') {
     return;
   }

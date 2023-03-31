@@ -11,7 +11,7 @@ import FormHeader from '@/components/FormHeader.vue';
 import MessageForm from '@/components/MessageForm.vue';
 import MessageList from '@/components/MessageList.vue';
 import { defineComponent, ref } from 'vue';
-import { socket } from '@/socket';
+import {pusher, socket} from '@/socket';
 
 defineComponent({
   name: 'Messenger',
@@ -32,6 +32,10 @@ socket.on('get-messages', (e) => {
 socket.on('message:get', (e) => {
   messages.value.push(e);
 });
+
+pusher.listen('MessageSent',(event) => {
+    console.log(event)
+})
 
 function sendMessage(e) {
   if (e?.text.length > 0) {
