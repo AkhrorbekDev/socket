@@ -1,6 +1,5 @@
 import {reactive} from 'vue';
 import {io} from 'socket.io-client';
-import Pusher from "pusher-js";
 
 export const state = reactive({
     connected: false,
@@ -30,9 +29,3 @@ socket.on('disconnect', () => {
     state.socket_id = null;
 });
 
-
-export const pusher = new Pusher('qwerty', {
-    httpHost: '92.204.253.20',
-    httpPort: '6001',
-    cluster: 'mt1'
-})

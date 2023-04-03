@@ -13,11 +13,10 @@ import Contacts from '@/components/Contacts.vue';
 </script>
 <template>
     <div class="container-fluid app">
-        <button @click="test">test</button>
         <div style="margin-right: 16px">
             <Contacts style="width: 500px"/>
         </div>
-        <Messenger/>
+        <Messenger />
     </div>
 </template>
 
